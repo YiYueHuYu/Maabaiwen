@@ -1,0 +1,51 @@
+{
+    "点击百闻牌": {
+        "recognition": "TemplateMatch",
+        "template": "百闻牌应用图标.png",
+        "action": "Click",
+        "next": [
+            "点击空白处",
+            "进入游戏"
+        ]
+    },
+    "点击空白处": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击空白处",
+        "action": "Click"
+    },
+    "进入游戏": {
+        "recognition": "OCR",
+        "expected": "进入游戏",
+        "action": "Click",
+        "next": [
+            "点击空白处",
+            "确认改动",
+            "关闭活动栏",
+            "关闭委托栏",
+            "检查是否启动"
+        ]
+    },
+    "确认改动": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "好的按钮.png",
+        "action": "Click"
+    },
+    "关闭活动栏": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "活动栏关闭按钮.png",
+        "action": "Click"
+    },
+    "关闭委托栏": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "活动栏关闭按钮.png",
+        "action": "Click"
+    },
+    "检查是否启动": {
+        "recognition": "TemplateMatch",
+        "template": "主页鼓.png"
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "做日常": {
+        "next": [
+            "签到",
+            "领取每日奖励"
+        ]
+    },
+    "签到": {
+        "recognition": "TemplateMatch",
+        "template": "签到小人.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭签到页",
+            "选择财运签"
+        ]
+    },
+    "选择财运签": {
+        "recognition": "TemplateMatch",
+        "template": "财运小鱼.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击空白处",
+            "关闭签到页"
+        ]
+    },
+    "点击空白处": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击空白处",
+        "action": "Click"
+    },
+    "关闭签到页": {
+        "recognition": "OCR",
+        "expected": "累计签到奖励",
+        "action": "Click",
+        "target_offset": [
+            500,
+            0,
+            0,
+            0
+        ]
+    },
+    "领取每日奖励": {
+        "recognition": "TemplateMatch",
+        "template": "活动图标.png",
+        "action": "Click",
+        "next": [
+            "点击福利中心",
+            "活动栏滑动"
+        ]
+    },
+    "点击福利中心": {
+        "recognition": "OCR",
+        "expected": "福利中心",
+        "action": "Click",
+        "next": [
+            "领取奖励",
+            "关闭活动栏"
+        ]
+    },
+    "活动栏滑动": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "OCR",
+        "expected": "福利中心",
+        "action": "Swipe",
+        "begin": [
+            150,
+            500,
+            0,
+            0
+        ],
+        "end": [
+            150,
+            150,
+            0,
+            0
+        ]
+    },
+    "领取奖励": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "领取图标.png",
+        "action": "Click",
+        "next": [
+            "点击空白处",
+            "没奖励了"
+        ]
+    },
+    "没奖励了": {
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "领取图标.png",
+        "next": [
+            "关闭活动栏"
+        ]
+    },
+    "关闭活动栏": {
+        "recognition": "TemplateMatch",
+        "template": "活动栏关闭按钮.png",
+        "action": "Click"
+    }
+}
