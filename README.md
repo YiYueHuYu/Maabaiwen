@@ -19,6 +19,8 @@
 周常：
 - 刷新剧场任务
 
+未来计划增加固定卡组战斗功能 用于商店街战斗
+
 <p align="center">
   <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/MaaAssistantArknights/design@main/logo/maa-logo_512x512.png" width="256" height="256" />
 </p>
