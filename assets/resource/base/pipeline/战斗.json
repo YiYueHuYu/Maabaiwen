@@ -1,0 +1,66 @@
+{
+    "进入战斗": {
+        "recognition": "OCR",
+        "expected": "可选择手牌进行替换",
+        "next": [
+            "替换_小松丸灵敏",
+            "替换_小松丸松果",
+            "替换_妖琴师魔音",
+            "替换_妖琴师余音",
+            "点击确认选牌"
+        ]
+    },
+    "替换_小松丸灵敏": {
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": "战斗/小松丸_灵敏.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "next": [
+            "替换"
+        ]
+    },
+    "替换_小松丸松果": {
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": "战斗/小松丸_松果.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "next": [
+            "替换"
+        ]
+    },
+    "替换_妖琴师魔音": {
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": "战斗/妖琴师_魔音.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "next": [
+            "替换"
+        ]
+    },
+    "替换_妖琴师余音": {
+        "is_sub": true,
+        "recognition": "FeatureMatch",
+        "template": "战斗/妖琴师_余音.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "next": [
+            "替换"
+        ]
+    },
+    "替换": {
+        "recognition": "TemplateMatch",
+        "template": "替换按钮.png",
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "点击确认选牌": {
+        "recognition": "TemplateMatch",
+        "template": "确认选牌按钮.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_wait_freezes": 500
+    }
+}

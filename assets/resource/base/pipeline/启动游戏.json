@@ -3,12 +3,14 @@
         "recognition": "TemplateMatch",
         "template": "百闻牌应用图标.png",
         "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 10000,
         "next": [
-            "点击空白处",
+            "启动_点击空白处",
             "进入游戏"
         ]
     },
-    "点击空白处": {
+    "启动_点击空白处": {
         "is_sub": true,
         "recognition": "OCR",
         "expected": "点击空白处",
@@ -18,13 +20,21 @@
         "recognition": "OCR",
         "expected": "进入游戏",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
-            "点击空白处",
+            "启动_点击空白处",
+            "启动_点击继续",
             "确认改动",
-            "关闭活动栏",
-            "关闭委托栏",
+            "启动_关闭活动栏",
+            "启动_关闭委托栏",
             "检查是否启动"
         ]
+    },
+    "启动_点击继续": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击屏幕继续",
+        "action": "Click"
     },
     "确认改动": {
         "is_sub": true,
@@ -32,16 +42,17 @@
         "template": "好的按钮.png",
         "action": "Click"
     },
-    "关闭活动栏": {
+    "启动_关闭活动栏": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "活动栏关闭按钮.png",
         "action": "Click"
     },
-    "关闭委托栏": {
+    "启动_关闭委托栏": {
         "is_sub": true,
         "recognition": "TemplateMatch",
-        "template": "活动栏关闭按钮.png",
+        "template": "委托栏关闭按钮.png",
+        "threshold": 0.9,
         "action": "Click"
     },
     "检查是否启动": {

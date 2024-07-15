@@ -2,7 +2,11 @@
     "做日常": {
         "next": [
             "签到",
-            "领取每日奖励"
+            "领取每日奖励",
+            "案内所任务刷新",
+            "购买每日特惠秘卷",
+            "领取游览卡奖励",
+            "领取邮件奖励"
         ]
     },
     "签到": {
@@ -18,6 +22,7 @@
     "选择财运签": {
         "recognition": "TemplateMatch",
         "template": "财运小鱼.png",
+        "threshold": 0.9,
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -80,20 +85,13 @@
         ]
     },
     "领取奖励": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": "领取图标.png",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "点击空白处",
-            "没奖励了"
-        ]
-    },
-    "没奖励了": {
-        "inverse": true,
-        "recognition": "TemplateMatch",
-        "template": "领取图标.png",
-        "next": [
+            "领取奖励",
             "关闭活动栏"
         ]
     },
@@ -101,5 +99,356 @@
         "recognition": "TemplateMatch",
         "template": "活动栏关闭按钮.png",
         "action": "Click"
+    },
+    "案内所任务刷新": {
+        "recognition": "TemplateMatch",
+        "template": "案内所图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新任务",
+            "关闭委托栏"
+        ]
+    },
+    "刷新任务": {
+        "recognition": "TemplateMatch",
+        "template": "刷新图标.png",
+        "order_by": "Horizontal",
+        "index": -1,
+        "action": "Click",
+        "next": [
+            "关闭委托栏"
+        ]
+    },
+    "关闭委托栏": {
+        "recognition": "TemplateMatch",
+        "template": "委托栏关闭按钮.png",
+        "threshold": 0.9,
+        "action": "Click"
+    },
+    "购买每日特惠秘卷": {
+        "next": [
+            "点击百闻馆",
+            "寻找百闻馆"
+        ]
+    },
+    "寻找百闻馆": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "百闻馆图标.png",
+        "action": "Swipe",
+        "begin": [
+            650,
+            600,
+            0,
+            0
+        ],
+        "end": [
+            650,
+            150,
+            0,
+            0
+        ]
+    },
+    "点击百闻馆": {
+        "recognition": "TemplateMatch",
+        "template": "百闻馆图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击秘卷店"
+        ]
+    },
+    "点击秘卷店": {
+        "recognition": "TemplateMatch",
+        "template": "秘卷店图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "切换金币购买"
+        ]
+    },
+    "切换金币购买": {
+        "recognition": "TemplateMatch",
+        "template": "金币切换标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "选择优惠御札",
+            "返回抽卡界面"
+        ]
+    },
+    "选择优惠御札": {
+        "recognition": "TemplateMatch",
+        "template": "首购优惠标志.png",
+        "action": "Click",
+        "target_offset": [
+            0,
+            -120,
+            0,
+            0
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击购买御札"
+        ]
+    },
+    "点击购买御札": {
+        "recognition": "TemplateMatch",
+        "template": "购买猫猫.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击空白处",
+            "选择优惠御札",
+            "返回抽卡界面"
+        ]
+    },
+    "返回抽卡界面": {
+        "recognition": "TemplateMatch",
+        "template": "秘卷店关闭按钮.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "百闻馆返回主页"
+        ]
+    },
+    "百闻馆返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "百闻馆返回键.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "检查是否返回主页",
+            "寻找主页鼓"
+        ]
+    },
+    "商店街战斗": {
+        "next": [
+            "进入商店街",
+            "寻找商店街"
+        ]
+    },
+    "寻找商店街": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "商店街图标.png",
+        "action": "Swipe",
+        "begin": [
+            650,
+            600,
+            0,
+            0
+        ],
+        "end": [
+            650,
+            150,
+            0,
+            0
+        ]
+    },
+    "进入商店街": {
+        "recognition": "TemplateMatch",
+        "template": "商店街图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "识别一条",
+            "商店街初始化"
+        ]
+    },
+    "商店街初始化": {
+        "action": "Swipe",
+        "begin": [
+            100,
+            550,
+            0,
+            0
+        ],
+        "end": [
+            1100,
+            550,
+            0,
+            0
+        ],
+        "next": [
+            "点击战斗",
+            "寻找战斗"
+        ]
+    },
+    "识别一条": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "商店街产生的收益是这样的",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击空白处"
+        ]
+    },
+    "点击战斗": {
+        "recognition": "TemplateMatch",
+        "template": "战斗问号.png",
+        "pre_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "选择战斗"
+        ]
+    },
+    "寻找战斗": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "战斗问号.png",
+        "threshold": 0.9,
+        "action": "Swipe",
+        "begin": [
+            1100,
+            550,
+            0,
+            0
+        ],
+        "end": [
+            600,
+            550,
+            0,
+            0
+        ]
+    },
+    "选择战斗": {
+        "recognition": "TemplateMatch",
+        "template": "商店街战斗按钮.png",
+        "action": "Click",
+        "next": [
+            "阵容初始化完成",
+            "阵容初始化"
+        ]
+    },
+    "阵容初始化": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "选择预设阵容.png",
+        "action": "Swipe",
+        "begin": [
+            100,
+            350,
+            0,
+            0
+        ],
+        "end": [
+            1100,
+            350,
+            0,
+            0
+        ]
+    },
+    "阵容初始化完成": {
+        "recognition": "TemplateMatch",
+        "template": "选择预设阵容.png",
+        "next": [
+            "选择阵容",
+            "寻找阵容"
+        ]
+    },
+    "选择阵容": {
+        "recognition": "TemplateMatch",
+        "template": "阵容简示.png",
+        "action": "Click",
+        "next": [
+            "点击出战"
+        ]
+    },
+    "寻找阵容": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "阵容简示.png",
+        "action": "Swipe",
+        "begin": [
+            1100,
+            350,
+            0,
+            0
+        ],
+        "end": [
+            600,
+            350,
+            0,
+            0
+        ]
+    },
+    "点击出战": {
+        "recognition": "TemplateMatch",
+        "template": "出战按钮.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "post_delay": 3000,
+        "next": [
+            "进入战斗"
+        ]
+    },
+    "领取游览卡奖励": {
+        "recognition": "TemplateMatch",
+        "template": "游览卡图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击一键领取",
+            "游览卡返回主页"
+        ]
+    },
+    "点击一键领取": {
+        "recognition": "TemplateMatch",
+        "template": "一键领取按钮.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击空白处",
+            "游览卡返回主页"
+        ]
+    },
+    "游览卡返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "游览卡返回键.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "检查是否返回主页",
+            "寻找主页鼓"
+        ]
+    },
+    "领取邮件奖励": {
+        "recognition": "TemplateMatch",
+        "template": "邮件图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击全部领取",
+            "邮件返回主页"
+        ]
+    },
+    "点击全部领取": {
+        "recognition": "TemplateMatch",
+        "template": "全部领取按钮.png",
+        "threshold": 0.9,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击空白处",
+            "邮件返回主页"
+        ]
+    },
+    "邮件返回主页": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "检查是否返回主页",
+            "寻找主页鼓"
+        ]
     }
 }

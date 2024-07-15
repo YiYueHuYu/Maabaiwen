@@ -1,0 +1,229 @@
+{
+    "做周常": {
+        "next": [
+            "刷新剧场任务"
+        ]
+    },
+    "刷新剧场任务": {
+        "next": [
+            "点击剧场",
+            "寻找剧场"
+        ]
+    },
+    "寻找剧场": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "剧场图标.png",
+        "action": "Swipe",
+        "begin": [
+            650,
+            600,
+            0,
+            0
+        ],
+        "end": [
+            650,
+            150,
+            0,
+            0
+        ]
+    },
+    "点击剧场": {
+        "recognition": "TemplateMatch",
+        "template": "剧场图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击剧场委托"
+        ]
+    },
+    "点击剧场委托": {
+        "recognition": "TemplateMatch",
+        "template": "剧场委托图标.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "刷新委托": {
+        "next": [
+            "识别刷新委托",
+            "识别青岚关键词",
+            "识别祝星启明关键词",
+            "识别充能关键词",
+            "识别和花有关关键词",
+            "识别月夜幻响关键词",
+            "识别繁花入梦关键词",
+            "识别喧哗烩战关键词",
+            "识别桃源故里关键词",
+            "识别远山遥泽关键词",
+            "识别鸣雷启蛰关键词",
+            "滑动委托栏",
+            "剧场委托返回剧场"
+        ]
+    },
+    "识别刷新委托": {
+        "recognition": "OCR",
+        "expected": "刷新委托",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别青岚关键词": {
+        "recognition": "OCR",
+        "expected": "青岚",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别祝星启明关键词": {
+        "recognition": "OCR",
+        "expected": "祝星启明",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别充能关键词": {
+        "recognition": "OCR",
+        "expected": "充能",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别和花有关关键词": {
+        "recognition": "OCR",
+        "expected": "和花有关",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别月夜幻响关键词": {
+        "recognition": "OCR",
+        "expected": "月夜幻响",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别繁花入梦关键词": {
+        "recognition": "OCR",
+        "expected": "繁花入梦",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别喧哗烩战关键词": {
+        "recognition": "OCR",
+        "expected": "喧哗烩战",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别桃源故里关键词": {
+        "recognition": "OCR",
+        "expected": "桃源故里",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别远山遥泽关键词": {
+        "recognition": "OCR",
+        "expected": "远山遥泽",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "识别鸣雷启蛰关键词": {
+        "recognition": "OCR",
+        "expected": "鸣雷启蛰",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "滑动委托栏": {
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "剧场任务9图标.png",
+        "action": "Swipe",
+        "begin": [
+            1000,
+            450,
+            0,
+            0
+        ],
+        "end": [
+            1000,
+            350,
+            0,
+            0
+        ],
+        "next": [
+            "刷新委托"
+        ]
+    },
+    "剧场委托返回剧场": {
+        "recognition": "TemplateMatch",
+        "template": "剧场委托返回键.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "剧场返回主页"
+        ]
+    },
+    "剧场返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "剧场返回键.png",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "检查是否返回主页",
+            "寻找主页鼓"
+        ]
+    },
+    "检查是否返回主页": {
+        "recognition": "TemplateMatch",
+        "template": "主页鼓.png"
+    },
+    "寻找主页鼓": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "TemplateMatch",
+        "template": "主页鼓.png",
+        "action": "Swipe",
+        "begin": [
+            650,
+            150,
+            0,
+            0
+        ],
+        "end": [
+            650,
+            600,
+            0,
+            0
+        ]
+    }
+}
